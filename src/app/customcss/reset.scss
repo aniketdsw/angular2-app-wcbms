@@ -1,0 +1,72 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,300,500,700,900,100);
+
+// Variables (SASS instead of plain css):
+$default-spacing: 3rem;
+$default-radius: 0.2rem;
+$color-primary: cornflowerblue;
+$color-background: #e0e2e3;
+
+// GLOBAL STYLES:
+body{
+  background: $color-background;
+  padding: $default-spacing / 2;
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  color: rgb(33, 33, 33);
+}
+h1, h2, h3, h4{
+  font-weight: 300;
+  opacity: 0.75;
+}
+input[type=text] {
+  background: white;
+  color: #222;
+  font-size: 1rem;
+  font-family: 'Roboto', sans-serif;
+  padding: 0 1rem;
+  height: 3.5rem;
+  line-height: 3.5rem;
+  border-radius: $default-radius;
+  border: 1px solid #eee;
+  width: 17rem;
+}
+button{
+  background: $color-primary;
+  color: white;
+  font-size: 1rem;
+  font-weight: 400;
+  font-family: 'Roboto', sans-serif;
+  padding: 0 1rem;
+  height: 3.5rem;
+  width: 8rem;
+  line-height: 3.5rem;
+  border-radius: $default-radius;
+  border: none;
+  cursor: pointer;
+  &:hover{
+    background: lighten($color-primary, 5);
+  }
+  &:focus{
+    outline: none;
+  }
+  &:active{
+    background: darken($color-primary, 5);
+  }
+}
+
+
+// SCOPED STYLES per component:
+
+// Using section as the top level container in each component to enable scoping of css like this:
+my-app > section{
+  margin: $default-spacing / 2;
+  padding: $default-spacing;
+  background: white;
+  border-radius: $default-radius;
+}
+my-form > section{
+  padding: $default-spacing;
+  margin-bottom: $default-spacing;
+  background: lighten($color-background, 8);
+  border-radius: $default-radius;
+}

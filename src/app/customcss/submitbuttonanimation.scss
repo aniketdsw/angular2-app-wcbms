@@ -1,0 +1,155 @@
+$spinner: "data:image/svg+xml;base64,PHN2ZyB2ZXJzaW9uPSIxLjEiIGlkPSJsb2FkZXItMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgeD0iMHB4IiB5PSIwcHgiDQogICB3aWR0aD0iMjVweCIgaGVpZ2h0PSIyNXB4IiB2aWV3Qm94PSIwIDAgNDAgNDAiIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgMCAwIDQwIDQwIiB4bWw6c3BhY2U9InByZXNlcnZlIj4NCiAgPHBhdGggb3BhY2l0eT0iMC4yIiBmaWxsPSIjZmZmIiBkPSJNMjAuMjAxLDUuMTY5Yy04LjI1NCwwLTE0Ljk0Niw2LjY5Mi0xNC45NDYsMTQuOTQ2YzAsOC4yNTUsNi42OTIsMTQuOTQ2LDE0Ljk0NiwxNC45NDYNCiAgICBzMTQuOTQ2LTYuNjkxLDE0Ljk0Ni0xNC45NDZDMzUuMTQ2LDExLjg2MSwyOC40NTUsNS4xNjksMjAuMjAxLDUuMTY5eiBNMjAuMjAxLDMxLjc0OWMtNi40MjUsMC0xMS42MzQtNS4yMDgtMTEuNjM0LTExLjYzNA0KICAgIGMwLTYuNDI1LDUuMjA5LTExLjYzNCwxMS42MzQtMTEuNjM0YzYuNDI1LDAsMTEuNjMzLDUuMjA5LDExLjYzMywxMS42MzRDMzEuODM0LDI2LjU0MSwyNi42MjYsMzEuNzQ5LDIwLjIwMSwzMS43NDl6Ii8+DQogIDxwYXRoIGZpbGw9IiNmZmYiIGQ9Ik0yNi4wMTMsMTAuMDQ3bDEuNjU0LTIuODY2Yy0yLjE5OC0xLjI3Mi00Ljc0My0yLjAxMi03LjQ2Ni0yLjAxMmgwdjMuMzEyaDANCiAgICBDMjIuMzIsOC40ODEsMjQuMzAxLDkuMDU3LDI2LjAxMywxMC4wNDd6Ij4NCiAgICA8YW5pbWF0ZVRyYW5zZm9ybSBhdHRyaWJ1dGVUeXBlPSJ4bWwiDQogICAgICBhdHRyaWJ1dGVOYW1lPSJ0cmFuc2Zvcm0iDQogICAgICB0eXBlPSJyb3RhdGUiDQogICAgICBmcm9tPSIwIDIwIDIwIg0KICAgICAgdG89IjM2MCAyMCAyMCINCiAgICAgIGR1cj0iMC41cyINCiAgICAgIHJlcGVhdENvdW50PSJpbmRlZmluaXRlIi8+DQogICAgPC9wYXRoPg0KICA8L3N2Zz4=";
+ 
+%btn-animated {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 24px;
+  height: 24px;
+  margin-top: -13px;
+  margin-left: -13px;
+  background: url($spinner);
+}
+
+.btn--idle {
+  position: relative;
+  
+  &:before {
+    @extend %btn-animated;
+    animation-name: fadeOut;
+    animation-duration: 200ms;
+    animation-fill-mode: forwards;
+  }
+
+  /* Animate in default btn contents */
+  > .btn__text {
+    animation-name: fadeInScale;
+    animation-delay: 220ms;
+    animation-duration: 250ms;
+    animation-fill-mode: both;
+  }
+}
+
+.btn--processing {
+  position: relative;
+  pointer-events: none;
+
+  &:before {
+    @extend %btn-animated;
+    animation-name: fadeIn;
+    animation-delay: 320ms;
+    animation-duration: 500ms;
+    animation-fill-mode: both;
+  }
+
+  /* Animate out default btn contents */
+  > .btn__text {
+    display: inline-block;
+    animation-name: fadeOutScale;
+    animation-delay: 50ms;
+    animation-duration: 250ms;
+    animation-fill-mode: both;
+  }
+}
+
+
+button {
+    background-color: #111111;
+    border: none;
+    color: white;
+    padding: 12px 24px;
+    text-decoration: none;
+    margin: 4px 2px;
+    cursor: pointer;
+    font-family: sans-serif;
+    font-size: 14px; /* Set a font-size */
+}
+
+button:active {
+   background-color: #aaaaaa;
+   }
+.fa {
+    margin-left: -12px;
+    margin-right: 8px;
+}
+.retrieve-group {
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 5px;
+}
+
+label
+    {
+      width: 100%;
+      display: inline-block;
+      vertical-align: middle;
+      font-family: sans-serif;
+	  font-weight: bold;
+    }
+
+    textarea{
+      width: 100%;
+      font-family: sans-serif;
+	  resize: none;
+      height:80px;
+             }
+
+input[type=text]{
+    width: 20%;
+    padding: 12px 20px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    background-color: #f8f8f8;
+	font-family: sans-serif;
+   
+}
+
+
+.flex-container {
+    display: -webkit-flex;
+    display: flex;
+    width: 80%;
+    background-color: lightgrey;
+    margin: 0 auto;
+    
+}
+
+.flex-item {
+    
+    width: 33%;
+    height: 50%;
+    margin: 10px;
+    
+}
+
+.textboxlabel {
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 20px;
+    margin: 0 auto;
+}
+span{
+    margin-right:20px;
+    font-family: sans-serif;
+    
+}
+.buttonHolder{
+    float:right;
+}
+.retrieve-comment-group{
+    width:75%;
+    margin: 0 auto;
+}
+
+.comment-group{
+ margin: 0 auto;
+ width: 80%;
+}
+.searchbug{
+    margin: 0 auto;
+ width: 80%;
+}
+
+

@@ -1,0 +1,65 @@
+<html>
+<body>
+
+<br><br>
+<div class='searchbug'>
+<input #textbox type="text" required placeholder="Enter Query Id"/>
+<button (click)="getid(textbox.value)" >GetId</button> 
+    
+</div>
+<div class='flex-container'>
+<div class='flex-item'>
+<div class="retrieve-group"><label class="form-label">ABB Project Name</label><br> <div class="textboxlabel"><span>{{posts?.bugs[0]?.cf_abb_project_name}}</span></div></div><br>
+<div class="retrieve-group"><label class="form-label">ABB Project Number</label><br> <div class="textboxlabel"><span>{{posts?.bugs[0]?.cf_abb_project_number}}</span></div></div><br>
+<div class="retrieve-group"><label class="form-label">ABB Project Manager</label><br> <div class="textboxlabel"><span>{{posts?.bugs[0]?.cf_abb_project_manager}}</span></div></div><br>
+<div class="retrieve-group"><label class="form-label"> Customer Name</label><br><div class="textboxlabel"> <span>{{posts?.bugs[0]?.cf_customer_name}}</span></div></div><br>
+<div class="retrieve-group"><label class="form-label">Customer Reference</label><br> <div class="textboxlabel"><span>{{posts?.bugs[0]?.cf_customer_reference}}</span></div></div><br>
+</div>
+
+<div class='flex-item'>
+<div class="retrieve-group"><label class="form-label"> Product</label><br><div class="textboxlabel"> <span>{{posts?.bugs[0]?.cf_product}}</span></div></div><br>
+<div class="retrieve-group"><label class="form-label"> Component</label><br> <div class="textboxlabel"><span>{{posts?.bugs[0]?.cf_component}}</span></div></div><br>
+<div class="retrieve-group"><label class="form-label">  Summary</label><br> <div class="textboxlabel"><span>{{posts?.bugs[0]?.summary}}</span></div></div><br>
+<div class="retrieve-group"><label class="form-label">  Query Description</label><br><div class="textboxlabel"> <span>{{posts?.bugs[0]?. cf_query_description}}</span></div></div><br>
+<div class="retrieve-group"><label class="form-label">  Summary</label><br><div class="textboxlabel"> <span>{{posts?.bugs[0]?.summary}}</span></div></div><br>
+<div class="retrieve-group"><label class="form-label">  Version</label><br> <div class="textboxlabel"><span>{{posts?.bugs[0]?. cf_version}}</span></div></div><br>
+<div class="retrieve-group"><label class="form-label"> Query Number Prefix</label><br><div class="textboxlabel"> <span>{{posts?.bugs[0]?.cf_query_number_prefix}}</span></div></div><br>
+<div class="retrieve-group"><label class="form-label"> Query Number</label><br> <div class="textboxlabel"><span>{{posts?.bugs[0]?.id}}</span></div></div><br>
+<div class="retrieve-group"><label class="form-label"> NCR Number Prefix</label><br> <div class="textboxlabel"><span>{{posts?.bugs[0]?.cf_ncr_number_prefix}}</span></div></div><br>
+<div class="retrieve-group"><label class="form-label"> NCR Coordinator</label><br> <div class="textboxlabel"><span>{{posts?.bugs[0]?.cf_ncr_coordinator}}</span></div></div><br>
+<div class="retrieve-group"><label class="form-label"> Priority</label><br> <div class="textboxlabel"><span>{{posts?.bugs[0]?.priority}}</span></div></div><br>
+<div class="retrieve-group"><label class="form-label"> Severity</label><br><div class="textboxlabel"> <span>{{posts?.bugs[0]?.severity}}</span></div></div><br>
+</div>
+
+<div class='flex-item'>
+<div class="retrieve-group"><label class="form-label"> Status</label><br><div class="textboxlabel"> <span>{{posts?.bugs[0]?.status}}</span></div></div><br>
+<div class="retrieve-group"><label class="form-label"> Project Stage</label><br><div class="textboxlabel"> <span>{{posts?.bugs[0]?.cf_project_state}}</span></div></div><br>
+<div class="retrieve-group"><label class="form-label"> Action Required</label><br><div class="textboxlabel"> <span>{{posts?.bugs[0]?. cf_action_required}}</span></div></div><br>
+<div class="retrieve-group"><label class="form-label"> Solution</label><br> <div class="textboxlabel"><span>{{posts?.bugs[0]?.cf_solution}}</span></div></div><br>
+<div class="retrieve-group"><label class="form-label"> Assigned To</label><br> <div class="textboxlabel"><span>{{posts?.bugs[0]?.assigned_to}}</span></div></div><br>
+<div class="retrieve-group"><label class="form-label"> Due Date</label><br><div class="textboxlabel"> <span>{{posts?.bugs[0]?. cf_due_date}}</span></div></div><br>
+<div class="retrieve-group"><label class="form-label">Raised By</label><br> <div class="textboxlabel"><span>{{posts?.bugs[0]?.creator}}</span></div></div><br>
+<div class="retrieve-group"><label class="form-label"> Raised Date</label><br> <div class="textboxlabel"><span>{{posts?.bugs[0]?.creation_time}}</span></div></div><br>
+<div class="retrieve-group"><label class="form-label"> Resolution</label><br> <div class="textboxlabel"><span>{{posts?.bugs[0].cf_resolution}}</span></div></div><br>
+</div>
+</div>
+<br>
+    
+<div class="comment-group">
+        <label for="addcomment">Add Comment</label>
+        <textarea  name="addcomment" class="form-control" [(ngModel)]="model.addcomment" name="addcomment" #addcomment="ngModel"></textarea>    
+        <button (click)="postid(addcomment.value)" class='btn'>Submit</button>
+</div>
+
+  
+   <span *ngFor="let comm of commentposts?.bugs[textbox.value]?.comments">
+     <div class="retrieve-comment-group"><div class="textboxlabel"> <span style="float:left">From: {{comm.creator}}</span><span style="float:right">{{comm.creation_time}}</span>
+    <br>{{comm.text}}</div></div>
+   </span>
+
+
+</body>
+</html>
+
+
+

@@ -1,0 +1,117 @@
+.ng-valid[required], .ng-valid.required  {
+  border-left: 5px solid #42A948; /* green */
+}
+.ng-invalid:not(form)  {
+  border-left: 5px solid #a94442; /* red */
+}
+div {
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 20px;
+}
+label
+    {
+      width: 0px;
+      display: inline-block;
+      vertical-align: middle;
+      float:left;
+	  
+    }
+input[type=text],select {
+    width: 50%;
+   
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    background-color: #f8f8f8;
+	vertical-align: middle;
+}
+
+input[type=textarea] {
+    width: 50%;
+    height: 150px;
+    padding: 12px 20px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    background-color: #f8f8f8;
+    resize: none;
+	vertical-align: middle;
+}
+input[type=select] {
+    width: 50%;
+    height: 150px;
+    padding: 12px 20px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    background-color: #f8f8f8;
+    resize: none;
+}
+
+textarea {
+    width: 50%;
+    height: 150px;
+    padding: 12px 20px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    background-color: #f8f8f8;
+    resize: none;
+	vertical-align: middle;
+}
+
+
+.btn{
+	vertical-align: middle;
+	width: 20%;
+}
+
+.btn:disabled {
+    background-color: #111111;
+    border: none;
+    color: white;
+    padding: 12px 20px;
+    text-decoration: none;
+    margin: 4px 2px;
+    font-family: sans-serif;
+  	opacity: 0.6;
+    cursor: not-allowed;
+	}
+
+.btn:enabled {
+     background-color: #111111;
+     border: none;
+     color: white;
+   padding: 12px 20px;
+    text-decoration: none;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+.buttonHolder{
+    text-align: center;
+}
+
+.container{
+text-align: center;
+}
+
+span{
+     width: 50%;
+    height: 150px;
+    padding: 12px 20px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    background-color: #f8f8f8;
+    resize: none;
+	vertical-align: middle;
+}
+.form-group{
+    float:center;
+}
+.form-control{
+    position: relative;
+    left: 250px;
+}

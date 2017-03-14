@@ -1,0 +1,278 @@
+<html>
+    <head>
+        <style>
+.test{
+    height:30px;
+    width:200px;
+	position:relative;
+}
+
+</style>
+    </head>
+    <body>
+        <h2 align="center">ABB Project Change Management System</h2>
+        <table width="800" cellpadding="0" cellspacing="10" border="0" align="center"  style="border:1px solid black;">
+            <th colspan="2" align="center" style="color:black">Submit Change Request Form</th>
+        </table>
+        <br>
+        <table width="800" cellpadding="0" cellspacing="10" border="0" align="center" style="border:1px solid black;">
+            <th colspan="2" align="left" style="color:red">Project and Customer Details</th>
+            <tbody>
+                <td>
+            </td>
+                <tr>
+                    <td style="color:blue">
+  ABB Project Name:</td>
+                    <td>
+                                            Ultra-High-Voltage 800 KiloVolt System 
+
+                                        </td>
+                </tr>
+                <tr>
+                    <td style="color:blue">
+  ABB Project Number:</td>
+                    <td>
+                                            ABB-PGCI-123
+                                        </td>
+                </tr>
+                <tr>
+                    <td style="color:blue">
+  ABB Project Manager:</td>
+                    <td>
+                                          Ashish Sureka  
+                                        </td>
+                </tr>
+                <tr>
+                    <td style="color:blue">
+  Customer Name:</td>
+                    <td>
+                                            Power Grid Corporation of India (PGCI)
+                                        </td>
+                </tr>
+                <tr>
+                    <td style="color:blue">
+  Customer Reference:</td>
+                    <td>
+                                            PGCI-Raigarh-Pugalur
+                                        </td>
+                </tr>
+            </tbody>
+        </table>
+        <br>
+        <br>
+        <form method="post" action="welcome.php">
+            <table width="800" cellpadding="0" cellspacing="10" border="0" align="center" style="border:1px solid black;">
+                <th colspan="2" align="left" style="color:red">Change Request or Query Details</th>
+                <tbody>
+                    <tr>
+                        <td>
+                            <td>
+                                <tr>
+                                    <td>
+            </td>
+                                    <tr>
+                                        <td style="color:blue">
+  Product:</td>
+                                        <td>
+                                            SDM600 Substation Automation 
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="color:blue">
+  Component: </td>
+                                        
+										
+										<td>
+                                            <select name="cf_component" style="width:330px;">
+                                                <option value="Disturbance Recorder" selected>Disturbance Recorder</option>
+                                                <option value="Cyber Security Logger" >Cyber Security Logger</option>
+                                                <option value="User Account Management">User Account Management</option>
+                                                <option value="Tracking Relay Controller" >Tracking Relay Controller</option>
+                                            </select>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="color:blue">
+  
+  Summary:</td>
+                                        <td>
+                                            <textarea name="summary" cols="44" rows="2"></textarea>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="color:blue">
+  
+  Description: </td>
+                                        <td>
+                                            <textarea name="cf_query_description" cols="44" rows="5"></textarea>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="color:blue">
+  Version:</td>
+                                        <td>
+                                            <select name="cf_version" style="width:330px;">
+                                                <option value="1.0" selected>1.0</option>
+                                                <option value="2.0" >2.0</option>
+                                                <option value="3.0" >3.0</option>
+                                            </select>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="color:blue">
+Query Number Prefix: </td>
+                                        <td>
+                                            <input type="text" name="cf_query_number_prefix" size="43">
+  
+                                        
+                                        
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="color:blue">
+NCR Number Prefix:</td>
+                                        <td>
+                                            <select name="cf_ncr_number_prefix" style="width:330px;">
+                                                <option value="IN" selected>IN</option>
+                                                <option value="US" >US</option>
+                                                <option value="CH" >CH</option>
+                                                <option value="DE" >DE</option>
+                                            </select>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="color:blue">
+  
+NCR Coordinator: </td>
+                                        <td>
+                                            <input type="text" name="cf_ncr_coordinator" size="43">
+
+                                        
+                                        
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="color:blue">
+
+
+
+Priority:</td>
+                                        <td>
+                                            <select name="priority" style="width:330px;">
+                                                <option value="Highest" >Highest</option>
+                                                <option value="High">High</option>
+                                                <option value="Normal" selected>Normal</option>
+                                                <option value="Low" >Low</option>
+                                                <option value="Lowest" >Lowest</option>
+                                            </select>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="color:blue">
+
+Severity:
+            </td>
+                                        <td>
+                                            <select name="severity" style="width:330px;">
+                                                <option value="Blocker" >Blocker</option>
+                                                <option value="Critical" >Critical</option>
+                                                <option value="Major" >Major</option>
+                                                <option value="Normal" selected>Normal</option>
+                                                <option value="Minor" >Minor</option>
+                                                <option value="Trivial" >Trivial</option>
+                                                <option value="Enhancement" >Enhancement</option>
+                                            </select>
+                                        </td>
+                                    </tr>
+                                    <td>
+                                        
+  
+                                    
+                                    </td>
+                                </tbody>
+                            </table>
+                            <br>
+                            <br>
+                            <table width="800" cellpadding="0" cellspacing="10" border="0" align="center" style="border:1px solid black;">
+                                <th colspan="2" align="left" style="color:red">Change Request Administration</th>
+								<th colspan="2" align="left" style="color:black">Disabled for Submitter, Enabled for Project Manager and Resolver</th>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <td>
+                                                <tr>
+                                                    <td>
+            </td>
+                                                    <tr>
+                                                        <td style="color:blue">
+  Status:</td><td></td>
+                                                        <td>
+                                           Not Applicable
+                                        </td>
+										
+                                                    </tr>
+                                                    <tr>
+                                                        <td style="color:blue">
+  Project Stage</td><td></td>
+                                                        <td>
+                                           Not Applicable
+                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td style="color:blue">
+  Action Required</td><td></td>
+                                                        <td>
+                                           Not Applicable
+                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td style="color:blue">
+  Solution</td><td></td>
+                                                        <td>
+                                           Not Applicable
+                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td style="color:blue">
+  Assigned To</td><td></td>
+                                                        <td>
+                                           Not Applicable
+                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td style="color:blue">
+  Due Date</td><td></td>
+                                                        <td>
+                                           Not Applicable
+                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td style="color:blue">
+  Resolution</td><td></td>
+                                                        <td>
+                                           Not Applicable
+                                        </td>
+                                                    </tr>
+                                                    <td>
+                                       
+                                    
+                                    </td>
+                                                </tbody>
+                                            </table>
+                                            <br>
+                                            <br>
+                                            <div style="text-align:center">
+                                                <input type="submit" name="submit" value="Submit"  class="test">  
+							 
+                                            </div>
+                                            <br>
+                                            <br>
+                                            <br>
+                                            <br>
+                                            <br>
+                                            <br>
+                                            <br>
+                        
+                                        </form>
+                                    </body>
+                                </html>

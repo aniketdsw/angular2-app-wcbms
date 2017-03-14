@@ -1,0 +1,143 @@
+<div class="container">
+  <div [hidden]="submitted">
+    <h1>Query Submit Form</h1>
+    <form (ngSubmit)="onSubmit()" #heroForm="ngForm">
+    
+      
+            <div class="form-group">
+        <label for="cf_product">Product</label>
+        <input type="text" class="form-control" id="cf_product"
+               required
+               [(ngModel)]="model.cf_product" name="cf_product"
+               #cf_product="ngModel">
+        <div [hidden]="cf_product.valid || cf_product.pristine"
+             class="alert alert-danger">
+          Select A Product
+        </div>
+      </div>
+ <div class="form-group">
+        <label for="component">Component</label>
+        <select class="form-control" id="component"
+                required
+                [(ngModel)]="model.component" name="component"
+                #component="ngModel">
+          <option *ngFor="let com of components" [value]="com">{{com}}</option>
+        </select>
+        <div [hidden]="component.valid || component.pristine"
+             class="alert alert-danger">
+          Select A Component
+        </div>
+      </div>
+
+
+<div class="form-group">
+        <label for="summary">Summary</label>
+        <textarea name="summary" class="form-control" required [(ngModel)]="model.summary" name="summary"
+               #summary="ngModel"></textarea>
+               <div [hidden]="summary.valid || summary.pristine"
+             class="alert alert-danger">
+          Write The Summary
+        </div>
+ </div>
+
+<div class="form-group">
+        <label for="description">Description</label>
+        <textarea name="description" class="form-control" required [(ngModel)]="model.description" name="description"
+               #description="ngModel"></textarea>
+               <div [hidden]="description.valid || description.pristine"
+             class="alert alert-danger">
+          Write The Description
+        </div>
+ </div>
+
+
+<div class="form-group">
+        <label for="version">Version</label>
+        <select class="form-control" id="version"
+                required
+                [(ngModel)]="model.version" name="version"
+                #version="ngModel">
+          <option *ngFor="let ver of versions" [value]="ver">{{ver}}</option>
+        </select>
+        <div [hidden]="version.valid || version.pristine"
+             class="alert alert-danger">
+          Write The Description
+        </div>
+      </div>
+
+ <div class="form-group">
+        <label for="querynumberprefix">Query Number Prefix</label>
+        <input type="text" class="form-control" id="querynumberprefix"
+               required
+               [(ngModel)]="model.querynumberprefix" name="querynumberprefix"
+               #querynumberprefix="ngModel">
+        <div [hidden]="querynumberprefix.valid || querynumberprefix.pristine"
+             class="alert alert-danger">
+          Query Number Prefix Missing
+        </div>
+      </div>
+
+
+
+<div class="form-group">
+        <label for="ncrnumberprefix">NCR Number Prefix</label>
+        <select class="form-control" id="ncrnumberprefix"
+                required
+                [(ngModel)]="model.ncrnumberprefix" name="ncrnumberprefix"
+                #ncrnumberprefix="ngModel">
+          <option *ngFor="let ncr of ncrnumberprefixs" [value]="ncr">{{ncr}}</option>
+        </select>
+        <div [hidden]="ncrnumberprefix.valid || ncrnumberprefix.pristine"
+             class="alert alert-danger">
+          NCR Number Prefix Missing
+        </div>
+      </div>
+
+<div class="form-group">
+        <label for="ncrcoordinator">NCR Coordinator</label>
+        <input type="text" class="form-control" id="ncrcoordinator"
+               required
+               [(ngModel)]="model.ncrcoordinator" name="ncrcoordinator"
+               #ncrcoordinator="ngModel">
+        <div [hidden]="ncrcoordinator.valid || ncrcoordinator.pristine"
+             class="alert alert-danger">
+          NCR Coordinator
+        </div>
+      </div>
+
+ <div class="form-group">
+        <label for="priority">Priority</label>
+         <select class="form-control" id="ncrnumberprefix"
+                required
+                [(ngModel)]="model.priority" name="priority"
+                #priority="ngModel">
+          <option *ngFor="let pri of priorities" [value]="pri">{{pri}}</option>
+        </select>
+        <div [hidden]="priority.valid || priority.pristine"
+             class="alert alert-danger">
+          What is the Priority
+        </div>
+      </div>
+
+
+<div class="form-group">
+        <label for="severity">Severity</label>
+         <select class="form-control" id="severity"
+                required
+                [(ngModel)]="model.severity" name="severity"
+                #severity="ngModel">
+          <option *ngFor="let sev of severities" [value]="sev">{{sev}}</option>
+        </select>
+        <div [hidden]="severity.valid || severity.pristine"
+             class="alert alert-danger">
+          What is the Severity
+        </div>
+      </div>
+    
+ <div class="buttonHolder">
+      <button (click)="postid(cf_product.value,component.value,summary.value,description.value,version.value,querynumberprefix.value,ncrnumberprefix.value,
+      ncrcoordinator.value,priority.value,severity.value)" 
+       class="btn btn-success" [disabled]="!heroForm.form.valid">Submit</button>
+    </div>  
+    </form>
+  
