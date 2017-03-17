@@ -29,7 +29,7 @@ getPosts(value:string){
 getPosts1(value:string){
 
         return this.http.get(value)
-        .map(res => res.text());
+        .map(res => res.json());
 
 }
 

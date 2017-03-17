@@ -55,13 +55,13 @@ onSubmit(event:Event) {
       
    });
         
-       console.log('this.urlcomment   '+this.urlcomment);
+     //  console.log('this.urlcomment   '+this.urlcomment);
         this.postsService.getPosts1(this.urlcomment).subscribe(commentposts => {
         this.commentposts=commentposts;
         this.urlcommentpost=this.urlcomment;
         this.urlcomment='';
         console.log(commentposts);
-        console.log('urlcommentposts'+this.urlcommentpost);
+      //  console.log('urlcommentposts'+this.urlcommentpost);
     
     });
         }
@@ -70,7 +70,7 @@ model=new Comments('',false,true,'','');
 
     private postid(comm: string):void{
         this.model = new Comments(comm,false,true,'aniketdsw@gmail.com','bugs@123');
-            console.log('urlcommentposts2'+this.urlcommentpost);
+         //   console.log('urlcommentposts2'+this.urlcommentpost);
            if (!this.model) { return; }
            else{
             this.postsService.addPostsComment(this.model,this.urlcommentpost)
