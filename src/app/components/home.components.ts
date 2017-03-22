@@ -7,31 +7,25 @@ import {PostsService} from '../services/posts.service';
   moduleId: module.id,
   selector: 'hero-form',
   templateUrl: 'home.html',
-  styleUrls:['../customcss/submit.css'],
+  styleUrls:['../customcss/retrieve.css','../customcss/submitbuttonanimation.scss','https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'],
   providers: [PostsService]
+  
 })
 export class HomeComponent  { constructor(private postsService: PostsService){}
+posts:Obj ;
 str:XMLDocument;
- urlHome:string="http://localhost:80/bugzilla/buglist.cgi?email1=aniketdsw%40gmail.com&ctype=atom";
-
-model=new Login('aniketdsw@gmail.com','bugs@123');
-
-    private postid(comm: string):void{
-       // this.model = new Login('aniketdsw@gmail.com','bugs@123');
-         //   this.postsService.getHome(this.model,this.urlHome)
-           // .subscribe(
-        //    model => {this.model=model
-           
-          //  });
+ urlHome:string="http://localhost:80/bugzilla/rest.cgi/bug?assigned_to=aniketdsw@gmail.com";
 
 
-     this.postsService.addHome(this.urlHome).subscribe(
-     str => {str=str
 
-       
-    console.log(str);
-    });
-   }
+       private getid(): void {
+  
+        this.postsService.getPosts(this.urlHome).subscribe(posts => {
+        this.posts=posts;
+             console.log(posts);
+   });
+        
+  }
 
 }
 

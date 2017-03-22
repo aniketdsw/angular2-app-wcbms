@@ -1,1 +1,26 @@
-<h1>Home</h1> <button (click)="postid($event)" >Get Bug List</button> <br> {{str}} 
+<html>
+<body>
+<h1>Home</h1>  
+    
+<button (click)="getid()" >Get Bug List</button>
+
+<span *ngFor="let comm of posts?.bugs">
+     <div class="retrieve-comment-group"><div class="textboxlabel"> 
+         <span style="float:left">{{comm.id}}</span> 
+         <span style="float:left">{{comm.cf_product}}</span>
+         <span style="float:left">{{comm.cf_component}}</span>
+         <span style="float:left">{{comm.creator}}</span>
+         <span style="float:left">{{comm.status}} </span>
+         <span style="float:left">{{comm.last_change_time}} </span>
+         
+         
+         </div></div>
+</span>
+
+
+
+</body>
+</html>
+
+
+
